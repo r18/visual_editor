@@ -1,19 +1,13 @@
 import 'dart:html';
 import 'dart:svg';
+import 'hrTextElement.dart';
 
+var input = querySelector('#input');
+var svgCtx = querySelector('#output');
 void main() {
-  querySelector("#sample_text_id")
-      ..text = "Click me!"
-      ..onClick.listen(reverseText);
-  SvgElement svg;
-  document.body.append(svg);
+  
+  input.onKeyPress.listen((e)=> print(e));
+  hrTextElement t = new hrTextElement("Hello",100,100);
+  svgCtx.append(t.element);
 }
 
-void reverseText(MouseEvent event) {
-  var text = querySelector("#sample_text_id").text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
-  }
-  querySelector("#sample_text_id").text = buffer.toString();
-}
