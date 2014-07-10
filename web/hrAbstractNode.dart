@@ -1,15 +1,14 @@
 abstract class hrAbstractNode{
-  hrArea _area;
+  hrArea area;
   List<hrAbstractNode> nodes;
 
   void move(num x,num y);
   void update();
-  hrArea getArea();
 }
 
 class hrArea{
   int _x, _y, _w, _h; 
-  hrArea(x,y,w,h):
+  hrArea([int x=0,int y=0,int w=0,int h=0]):
     _x = x,
     _y = y,
     _w = w,
@@ -17,6 +16,7 @@ class hrArea{
 
   }
   get x=>_x;
+  get y=>_y;
 }
 
 class hrNodeState {
