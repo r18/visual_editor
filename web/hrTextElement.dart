@@ -6,10 +6,13 @@ class hrTextElement extends hrAbstractNode {
   TextElement _element;
   get element =>_element;
 
-  hrTextElement(String str,[num x=100,num y=100]){
+
+  hrTextElement(String str, [num x=100, num y=100]){
+    state = hrNodeState.NODE_CHANGED;
     _element = new TextElement(); 
     _element.text = str;
     area = new hrArea(x,y);
+    print(state.value);
     update();
   }
 
