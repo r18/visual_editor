@@ -13,10 +13,16 @@ void main() {
 
 void inputHandler (e){
   print(e.keyCode);
-  if(eval(input.value))input.value = "";
+  if(eval(input.value,e.keyCode))input.value = "";
 }
 
 bool eval (String input,int key){
+  switch (key){
+    case 8:
+      break;
+    default:
+      break;
+  }
   testText.addText(input);
   return true;
 }

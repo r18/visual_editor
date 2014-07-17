@@ -4,20 +4,21 @@ import 'dart:svg';
 class hrTextElement extends hrAbstractNode {
   String textContent;
   TextElement _element;
-  get element =>_element;
-
+  get text => textContent;
+  get element => _element;
+  
 
   hrTextElement(String str, [num x=100, num y=100]){
-    state = hrNodeState.NODE_CHANGED;
+    state = hrNodeState.HR_PROCESSING;
     _element = new TextElement(); 
-    _element.text = str;
     area = new hrArea(x,y);
-    print(state.value);
+    textContent = str;
     update();
   }
 
   void setText(String str){
-    _element.text = str;
+    textContent = str;
+    update();
   }
 
   void addText(String str){
@@ -25,6 +26,7 @@ class hrTextElement extends hrAbstractNode {
   }
 
   void update(){
+    _element.text = textContent;
     _element.setAttribute("x", area.x.toString());
     _element.setAttribute("y", area.y.toString());
   }

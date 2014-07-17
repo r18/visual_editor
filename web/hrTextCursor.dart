@@ -1,4 +1,4 @@
-import 'hrAbstractMarker.dart'
+import 'hrAbstractMarker.dart';
 
 class hrTextCursor extends hrAbstractMarker{
   
